@@ -1,0 +1,102 @@
+# sparse
+
+The sparse package provides the `sparse_numeric` class which is a
+representation fo a sparse numeric vector. This class comes with
+associated helper methods to do operations on these vectors such as
+addition, multiplication, etc…
+
+## Example
+
+To construct a sparse vector, we can convert a dense vector to sparse
+like so.
+
+``` r
+library(sparse)
+#> 
+#> Attaching package: 'sparse'
+#> The following object is masked from 'package:base':
+#> 
+#>     norm
+
+dense1 <- c(1, rep(0, 1e7))
+dense2 <- c( rep(0, 1e7), 1)
+sparse1 <- as(dense1, "sparse_numeric")
+sparse2 <- as(dense2, "sparse_numeric")
+```
+
+Now with this sparse vector we can perform basic arithmetic operations
+such as addition, multiplication, and subtraction.
+
+``` r
+sparse1 - sparse2
+#> Sparse numeric vector of length 10000001 with 2 non-zero entries
+#> Positions: 1 10000001 
+#> Values:    1 -1
+sparse1 + sparse2
+#> Sparse numeric vector of length 10000001 with 2 non-zero entries
+#> Positions: 1 10000001 
+#> Values:    1 1
+sparse1 * sparse2
+#> Sparse numeric vector of length 10000001 with 0 non-zero entries
+#> Positions:  
+#> Values:
+```
+
+We also define other helpers such as the inner product, mean, and
+standardization.
+
+``` r
+sparse_crossprod(sparse1, sparse2)
+#> [1] 0
+mean(sparse1)
+#> [1] 9.999999e-08
+s <- standardize(sparse1)
+```
+
+Finally we can print and visualize sparse vectors.
+
+``` r
+show(sparse1)
+#> Sparse numeric vector of length 10000001 with 1 non-zero entries
+#> Positions: 1 
+#> Values:    1
+plot(sparse1, sparse2)
+```
+
+![](reference/figures/README-unnamed-chunk-5-1.png)
+
+# Package index
+
+## All functions
+
+- [`mean(`*`<sparse_numeric>`*`)`](https://dylanh713-sds.github.io/sparse/reference/mean-sparse_numeric-method.md)
+  : Sparse Vector Mean
+- [`norm()`](https://dylanh713-sds.github.io/sparse/reference/norm.md) :
+  Sparse vector norm
+- [`plot(`*`<sparse_numeric>`*`,`*`<sparse_numeric>`*`)`](https://dylanh713-sds.github.io/sparse/reference/plot-sparse_numeric-sparse_numeric-method.md)
+  : Plot Two Sparse Numeric Vectors
+- [`` `+`( ``*`<sparse_numeric>`*`,`*`<sparse_numeric>`*`)`](https://dylanh713-sds.github.io/sparse/reference/plus-sparse_numeric-sparse_numeric-method.md)
+  : Add two sparse_numeric objects
+- [`show(`*`<sparse_numeric>`*`)`](https://dylanh713-sds.github.io/sparse/reference/show-sparse_numeric-method.md)
+  : Print out sparse vector
+- [`sparse_add()`](https://dylanh713-sds.github.io/sparse/reference/sparse_add.md)
+  : Add Two Sparse Vectors
+- [`sparse_crossprod()`](https://dylanh713-sds.github.io/sparse/reference/sparse_crossprod.md)
+  : Sparse Cross Product
+- [`sparse_div()`](https://dylanh713-sds.github.io/sparse/reference/sparse_div.md)
+  : Elementwise divide two vectors
+- [`sparse_mult()`](https://dylanh713-sds.github.io/sparse/reference/sparse_mult.md)
+  : Elementwise multiply two vectors
+- [`sparse_numeric-class`](https://dylanh713-sds.github.io/sparse/reference/sparse_numeric-class.md)
+  : Sparse Numeric Vector Class
+- [`` `-`( ``*`<sparse_numeric>`*`,`*`<sparse_numeric>`*`)`](https://dylanh713-sds.github.io/sparse/reference/sparse_numeric-sparse_numeric-method.md)
+  : Subtract two sparse_numeric objects
+- [`sparse_sub()`](https://dylanh713-sds.github.io/sparse/reference/sparse_sub.md)
+  : Subtract Two Sparse Vectors
+- [`sparse_validity`](https://dylanh713-sds.github.io/sparse/reference/sparse_validity.md)
+  : Validity Check for sparse_numeric
+- [`standardize()`](https://dylanh713-sds.github.io/sparse/reference/standardize.md)
+  : Standardize a Sparse Numeric Vector
+- [`` `*`( ``*`<sparse_numeric>`*`,`*`<sparse_numeric>`*`)`](https://dylanh713-sds.github.io/sparse/reference/times-sparse_numeric-sparse_numeric-method.md)
+  : Multiply two sparse_numeric objects
+

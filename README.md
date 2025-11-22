@@ -4,6 +4,11 @@
 # sparse
 
 <!-- badges: start -->
+
+[![R-CMD-check](https://github.com/dylanh713-sds/sparse/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/dylanh713-sds/sparse/actions/workflows/R-CMD-check.yaml)
+[![Codecov test
+coverage](https://codecov.io/gh/dylanh713-sds/sparse/graph/badge.svg)](https://app.codecov.io/gh/dylanh713-sds/sparse)
+[![test-coverage](https://github.com/dylanh713-sds/sparse/actions/workflows/test-coverage.yaml/badge.svg)](https://github.com/dylanh713-sds/sparse/actions/workflows/test-coverage.yaml)
 <!-- badges: end -->
 
 The sparse package provides the `sparse_numeric` class which is a

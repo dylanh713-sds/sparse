@@ -7,7 +7,7 @@
 
 [![R-CMD-check](https://github.com/dylanh713-sds/sparse/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/dylanh713-sds/sparse/actions/workflows/R-CMD-check.yaml)
 [![Test
-coverage](https://raw.githubusercontent.com/USER/REPO/coverage/badges/coverage.svg)](https://github.com/USER/REPO/actions/workflows/test-coverage.yaml)
+coverage](https://raw.githubusercontent.com/dylanh713-sds/sparse/coverage/badges/coverage.svg)](https://github.com/dylanh713-sds/sparse/actions/workflows/test-coverage.yaml)
 <!-- badges: end -->
 
 The sparse package provides the `sparse_numeric` class which is a
